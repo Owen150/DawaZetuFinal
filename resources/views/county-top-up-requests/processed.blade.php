@@ -47,8 +47,11 @@
             </div>
         </div>    
         <div class="container-fluid w-100">
-          <form action="post" method="">@method('PATCH')<button class="btn btn-primary float-end mt-4 ms-2">Approve</a></form>
-          <a class="btn btn-outline-primary float-end mt-4" id="show-details" data-bs-toggle="modal" data-bs-target="#topup">Ammend</a>
+          <form action="{{ route('approvedRequest', $topups->id) }}" method="post">
+            @csrf
+            <button type="submit" class="btn btn-success float-end mt-4 ms-2">Approve <span ><ion-icon name="add-circle-outline" style="position: relative; top:2px; left: 2px"></ion-icon></span></button>
+          </form>
+          <a class="btn btn-primary float-end mt-4" id="show-details" data-bs-toggle="modal" data-bs-target="#topup">Ammend <span ><ion-icon name="add-circle-outline" style="position: relative; top:2px; left: 2px"></ion-icon></span></a>
         </div>
       </div>
     </div>
