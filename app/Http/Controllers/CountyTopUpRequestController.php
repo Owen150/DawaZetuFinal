@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\CountyTopUpRequest;
 use App\Models\FacilityProduct;
+use App\Models\StoreTopUp;
+use App\Models\StoreTopUpDetails;
 use App\Models\TopUp;
 use Illuminate\Http\Request;
 
@@ -16,7 +18,7 @@ class CountyTopUpRequestController extends Controller
      */
     public function index()
     {
-        $topups = TopUp::where('status', '=' , 'processed')->get(); 
+        $topups = StoreTopUp::where('status', '=', 'processed')->get();
         return view('county-top-up-requests.index', compact('topups'));
     }
 
@@ -47,9 +49,11 @@ class CountyTopUpRequestController extends Controller
      * @param  \App\Models\CountyTopUpRequest  $countyTopUpRequest
      * @return \Illuminate\Http\Response
      */
-    public function show(CountyTopUpRequest $countyTopUpRequest)
+    public function show($id)
     {
-        //
+        $topups = StoreTopUp::find($id);
+        $topupdetails = StoreTopUpDetails::find($id);
+        return view('county-top-up-requests.processed', compact('topups', 'topupdetails'));
     }
 
     /**
@@ -70,9 +74,16 @@ class CountyTopUpRequestController extends Controller
      * @param  \App\Models\CountyTopUpRequest  $countyTopUpRequest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CountyTopUpRequest $countyTopUpRequest)
+    public function update(Request $request, $id)
     {
-        //
+        $topups = StoreTopUp::find($id);
+        $topups->status = 'approved';
+        if ($topups->update()) {
+            return redirect()->back()
+                ->with('success', 'Status updated successfully');
+        }
+        return redirect()->back()
+            ->with('unsuccess', 'System Error');
     }
 
     /**
@@ -85,4 +96,16 @@ class CountyTopUpRequestController extends Controller
     {
         //
     }
+
+    public function comment(Request $request, $id){
+        $topups = StoreTopUp::find($id);
+        $topups->comment = $request->comment;
+        $topups->status = 'ammended';
+
+        if ($topups->update()) {
+            return redirect()->back()
+                ->with('success', 'Status updated successfully');
+        }
+        return redirect()->back()
+            ->with('unsuccess', 'System Error');    }
 }

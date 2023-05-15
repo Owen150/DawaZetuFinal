@@ -51,7 +51,7 @@
                                     <td>{{ $topup->requested_by }}</td>
                                     <td>{{ $topup->request_date }}</td>
                                     <td>{{ $topup->status }}</td>
-                                    <td><p class="text-warning" id="show-details" data-bs-toggle="modal" data-bs-target="#topup_{{$topup->id}}">Process</a></td>                                    
+                                    <td><a class="text-warning" href ="{{ route('showProcessed', $topup->id) }}">Approve</a></td>                                    
                                 </tr>
                             @endforeach
                         </tbody>

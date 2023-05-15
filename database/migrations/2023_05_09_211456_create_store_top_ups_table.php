@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('request_id');
             $table->string('facility_id');
+            $table->string('comment');
 
             $table->timestamps();
         });
