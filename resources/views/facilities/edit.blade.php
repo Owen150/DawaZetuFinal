@@ -41,7 +41,7 @@
               </div>
 
               <div class="col-md-6">
-                <label for="" class="form-label">Type</label>
+                <label for="" class="form-label">Level</label>
               
                 <select class="form-select" name="type" id="type" required>
                   <option @if($facility->type == 'Level 1') selected @endif>Level 1</option>
@@ -71,13 +71,10 @@
                 <label for="contact_num" class="form-label">Contact Number</label>
                 <input id="contact_num" class="form-control" name="contact_num" type="text" autocomplete="off" required placeholder="Facility Contact Number" value="{{$facility->contact_num}}">
             </div>
-
             <div class="col-md-6">
               <label for="contact_num" class="form-label">Sub County</label>
               <input id="sub_county" class="form-control" name="sub_county" type="text" autocomplete="off" required placeholder="Sub county" value="{{$facility->sub_county}}">
-            </div>
-           
-           
+            </div>           
           </div>
 
           <div class="row mb-3">
@@ -85,15 +82,11 @@
                 <label for="ward" class="form-label">Ward</label>
                 <input id="ward" class="form-control" name="ward" type="text" autocomplete="off" required placeholder="Ward" value="{{$facility->ward}}">
             </div>
-
             <div class="col-md-6">
               <label for="location" class="form-label">Location</label>
               <input id="location" class="form-control" name="location" type="text" autocomplete="off" required placeholder="Location" value="{{$facility->location}}">
-            </div>
-           
+            </div>           
           </div>
-
-
           <input class="btn  btn-primary" type="submit" value="Submit" id="submits">
 
       </form>

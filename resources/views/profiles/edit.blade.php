@@ -12,7 +12,7 @@
     <div class="card">
       <div class="card-body">
 
-        <h3 class="card-title">Edit User Profile</h3>
+        <h3 class="card-title">Update Details</h3>
 
         <form action="{{ route('profile.update', $user->id) }}" method="POST">
             @csrf
@@ -20,15 +20,14 @@
             <div class="row mb-3">
 
                 <div class="col-md-6 mb-3">
-                  <label for="exampleInputUsername2" class="mb-2">Email</label>
-                  <input type="email" name="email" value="{{ $user->email }}" class="form-control" id="categoryName" placeholder="">
+                  <label for="exampleInputUsername2" class="mb-2">Profile Picture</label>
+                  <input type="file" name="" value="" class="form-control" id="categoryName" placeholder="">
                 </div>
 
                 <div class="col-md-6 mb-3">
                   <label for="exampleInputUsername2" class="mb-2">Phone Number</label>
                   <input type="email" name="email" value="{{ $user->phone_number }}" class="form-control" id="categoryName" placeholder="">
                 </div>
-
 
                 <div>
                   <button type="submit" class="btn btn-success">Submit <span style="position: relative; top:2px; left: 2px" ><ion-icon name="checkbox-outline"></ion-icon></span></button>

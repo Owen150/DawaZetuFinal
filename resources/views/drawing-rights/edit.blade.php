@@ -12,8 +12,7 @@
 @section('content')
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{{route('drawing-rights.index')}}">Drawing rights</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+    <li class="breadcrumb-item active"><a href="{{route('drawing-rights.index')}}">Edit Drawing Rights</a></li>
   </ol>
 </nav>
 
@@ -29,8 +28,6 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Drawing rights</h4>
-        <p class="text-muted mb-4">Create facilities drawing rights</p>
         <form id="signupForm">
             <div class="row mb-3">
                 <div class="col-md-6">
@@ -88,10 +85,9 @@
                       </div>
                 </div>
             </div>
-
-
           
-          <input class="btn  btn-primary" type="submit" value="Submit" id="submit">
+          <input class="btn  btn-success" type="submit" value="Submit" id="submit">
+
         </form>
       </div>
     </div>

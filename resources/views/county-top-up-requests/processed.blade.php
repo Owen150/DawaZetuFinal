@@ -41,7 +41,7 @@
                   <tr>
                       <td>{{ $number }}</td>
                       <?php $number++; ?>
-                      <td>{{ App\Models\Product::where('id','=', $topupdetails->product_id)->first()->product_name }}</td>
+                      <td>{{ $topupdetails->product_name}}</td>
                   </tr>
                 </tbody>
               </table>

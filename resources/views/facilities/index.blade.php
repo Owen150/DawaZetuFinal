@@ -25,8 +25,7 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Tables </a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data Table</li> 
+    <li class="breadcrumb-item"><a href="#">Facilities </a></li>
   </ol>
   <div class="flex-initial"></div>
   <div>     
@@ -45,20 +44,16 @@
 <div class="row">
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
-      <div class="card-body">
-        <h6 class="card-title">Data Table</h6>
-        
-        <div class="table-responsive">
-            
+      <div class="card-body">        
+        <div class="table-responsive">           
           <table id="dataTableExample" class="table table-striped table-bordered" data-sorting="false">
             <thead style="">
               <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Type</th>
+                <th>Level</th>
                 <th>Address</th>
                 <th>Email</th>
-                <th>Location</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -128,7 +123,6 @@
                             <td>${element.address}</td>
                             <td>${element.email}</td>
                   
-                            <td>${element.location}</td>
                             <td style="display: flex; gap: 10px">
                                 
                                 <a class="text-success" href="/facility/${element.id}/edit"><span>Edit</span></a>
@@ -152,6 +146,8 @@
                                   <p class="mb-1"><span class="text-muted">CONTACT: </span> ${element.contact_num}</p>
                                   <p class="mb-1"><span class="text-muted">SUB COUNTY: </span> ${element.sub_county}</p>
                                   <p class="mb-1"><span class="text-muted">WARD: </span> ${element.ward}</p>
+                                  <p class="mb-1"><span class="text-muted">LOCATION: </span> ${element.location}</p>
+
                                 </div>
                               </div>
                               <div class="modal-footer">

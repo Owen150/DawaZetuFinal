@@ -44,8 +44,7 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Facilities</h4>
-        <p class="text-muted mb-4">Create facilities </p>
+        <h4 class="card-title">Add details</h4>
         <form id="signupForm">
           
 
@@ -56,8 +55,8 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label for="" class="form-label">Type</label>
-                  <select class="form-select" name="type" id="type" required>
+                  <label for="" class="form-label">Level</label>
+                  <select class="js-example-basic-single form-select" name="type" id="type" required>
                     <option selected >Level 1</option>
                     <option>Level 2</option>
                     <option>Level 3</option>
@@ -105,8 +104,6 @@
               </div>
              
             </div>
-
-
             <input class="btn  btn-success" type="submit" value="Submit" id="submits">
 
         </form>

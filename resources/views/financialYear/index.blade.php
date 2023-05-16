@@ -27,7 +27,7 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
     <ol class="breadcrumb" style="flex-none">
-        <li class="breadcrumb-item"><a href="{{ route('financialYear.index') }}">Financial Year</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('financialYear.index') }}">Financial Years</a></li>
         {{-- <li class="breadcrumb-item active" aria-current="page">Create year</li> --}}
     </ol>
     <div class="cancel">
@@ -54,7 +54,6 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h6 class="card-title">Staff Table</h6>
           <p class="text-muted mb-3"></p>
           <div class="table-responsive">
               
@@ -62,10 +61,10 @@
               <thead style="">
                 <tr>
                     <th class="pt-0">#</th>
-                    <th class="pt-0">Name</th>
+                    <th class="pt-0">Year</th>
                     <th class="pt-0">Start Date</th>
                     <th class="pt-0">End Date</th>
-                    <th>More</th>
+                    <th>Action</th>
                 </tr>
               </thead>
               <tbody >

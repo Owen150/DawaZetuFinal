@@ -34,15 +34,11 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Tables </a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data Table</li>
-
-    
+    <li class="breadcrumb-item"><a href="#">Drawing Rights Table</a></li>   
   </ol>
   <div class="flex-initial"></div>
-
   <div>    
-    <a href="{{route('drawing-rights.create')}}"><button type="button" class="btn btn-primary" style="width: 100%">Add New Rights <span class="ml-2 mt-2 pt-2"><ion-icon name="add-circle-outline"></ion-icon></span></button></a>
+    <a href="{{route('drawing-rights.create')}}" type="button" class="btn btn-primary" style="width: 100%">Add New Rights <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></a>
   </div>
 
   
@@ -63,11 +59,8 @@
 <div class="row">
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
-      <div class="card-body">
-        <h6 class="card-title">Data Table</h6>
-        
-        <div class="table-responsive">
-            
+      <div class="card-body">        
+        <div class="table-responsive">  
           <table id="dataTableExample" class="table table-striped table-bordered" data-sorting="false">
             <thead style="">
               <tr>
@@ -76,7 +69,7 @@
                 <th>Financial Year</th>
                 <th>Workload</th>
                 <th>Period</th>
-                <th>Amt Issued</th>
+                <th>Allocated Amount</th>
                 <th>Amt Used</th>
                 <th>End Date</th>
                 <th>Actions</th>
