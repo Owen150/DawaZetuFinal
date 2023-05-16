@@ -67,43 +67,29 @@
       <div class="card-body">
         <div style="display: flex; gap: 20px">
           <div>
-              <h4 class="card-title">Facility</h4>
-              <p class="text-muted mb-4">Details</p>
-          </div>
-          <div style="flex: 1 1 0%; text-align:end">
-              <h4 class="card-title">Budget</h4>
-              <p class="text-muted mb-4">Available budget balance</p>
-          </div>
+            <h4 id="facility-name"></h4>
+            <p class="mb-2"><span class="text-dark bold mb-2">END DATE:</span > <span id="facility-type">
+              <input type="date" class="form-control" required name="end_date">
+              {{-- hidden input for allocated budget ---}}
+              <input type="hidden" name="allocated_budget" id="allocated_budget" value="{{$allocatedBudget->id}}">
+              <input type="hidden" name="original_amount" id="original_amount" value="{{$budget_left}}">
+            </span>
+            </p>              
+        </div>
+        <div style="width: 35vw"></div>
+        <div style="flex: 1 1 0%; text-align:end">
+          <h4 class="card-title">Remaining Budget</h4>
+            <div style="text-align: center; background: #f9fafb; border-radius:0.375rem;">
+                <h5 class="p-2" ><span class="text-success">KSH</span> <span class="text-success" id="availableAmt">{{number_format($budget_left, 2)}}</span></h5>
+            </div>              
+        </div>
       </div>
       
-      
-      <div class="mb-3" style="display: flex; gap: 20px">
-          <div style="width: 10vw;height: 20vh; margin-">
-              <img src="https://cdn-icons-png.flaticon.com/512/4006/4006511.png" alt="" srcset="" style="width: 100%;height: 100%">
-          </div>
-          <div>
-              <h4 class="pt-1" id="facility-name"></h4>
-
-              <p class="mt-2 pt-2 mb-2"><span class="text-dark bold">END DATE:</span > <span id="facility-type">
-                <input type="date" class="form-control" required name="end_date">
-                {{-- hidden input for allocated budget ---}}
-                <input type="hidden" name="allocated_budget" id="allocated_budget" value="{{$allocatedBudget->id}}">
-                <input type="hidden" name="original_amount" id="original_amount" value="{{$budget_left}}">
-              </span></p>
-              
-          </div>
-          <div style="width: 40vw"></div>
-          <div style="flex: 1 1 0%; text-align:end">
-              <div style="text-align: center; background: #f9fafb; border-radius:0.375rem;">
-                  <h5 class="p-2" ><span class="text-success">KSH</span> <span class="text-success" id="availableAmt">{{number_format($budget_left, 2)}}</span></h5>
-              </div>
-              
-              
-          </div>
+      <div style="display: flex; gap: 20px">
+          
       </div>
 
-      <hr>
-        
+      <hr>       
           <div class="table-div-wrapper" >
             <table class="table scroll table-hover">
                 <thead>
@@ -133,17 +119,11 @@
                         </td>
                         
                     </tr>
-                    @endforeach
-
-
-                    
-                   
-                    
-                </tbody>
-                
+                    @endforeach                    
+                </tbody>               
             </table>
         
-            <button type="submit" id="submit-btn" class="btn btn-success mt-3">Submit</button>
+            <button type="submit" id="submit-btn" class="btn btn-success mt-3">Submit <span style="position: relative; top:2px; left: 2px" ><ion-icon name="checkbox-outline"></ion-icon></span></button>
         </div>
           {{---
             <div class="row mb-3">

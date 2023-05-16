@@ -45,15 +45,11 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Users</h4>
-        <p class="text-muted mb-4">Create Users</p>
         <form id="signupForm">
-          
-
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="name" class="form-label">Finacial Year</label>
-                    <select class="form-select" name="financial_year" id="financial_year" required>
+                    <label for="name" class="form-label">Financial Year</label>
+                    <select class="js-example-basic-single form-select" name="financial_year" id="financial_year" required>
                     
                         <option  value="{{$finacialYear->id}}">{{$finacialYear->name;}}</option>
                         
@@ -61,8 +57,10 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="period" class="form-label">Period</label>
-                    <input id="period" class="form-control" name="period" type="text" autocomplete="off" required placeholder="period" value="{{getFinacialPeriod()}}">
+                    <label for="period" class="form-label">Period/Quarter</label>
+                    <select class="js-example-basic-single form-select" id="period" name="period" required >
+                      <option  value="{{$finacialYear->id}}">{{getFinacialPeriod()}}</option>
+                    </select>
                   </div>
     
                
@@ -75,13 +73,7 @@
                 <input id="budget" class="form-control" name="budget" type="text" autocomplete="off" required placeholder="budget">
               </div>
             </div>
-
-            
-
-           
-
-
-            <input class="btn  btn-success" type="submit" value="Submit" id="submits">
+            <a class="btn btn-success" type="submit" value="Submit" id="submits">Submit <span style="position: relative; top:2px; left: 2px" ><ion-icon name="checkbox-outline"></ion-icon></span></a>
 
         </form>
       </div>

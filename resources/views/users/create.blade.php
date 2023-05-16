@@ -12,10 +12,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
-    .cancel{
-      display: flex;
-      flex-direction: row-reverse;
-    }
   </style>
 @endpush
 
@@ -26,10 +22,6 @@
     <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
     <li class="breadcrumb-item active" aria-current="page">Create</li>
   </ol>
-  <div class="cancel">
-    <div></div>
-    <a href="{{ route('users.index') }}" class="btn btn-danger mb-md-0">Cancel <span><ion-icon name="close-circle-outline"></ion-icon></span></a>
-  </div>
 </nav>
 <div class="alert alert-success" role="alert" id="success">
   Record was added successfully
@@ -43,74 +35,62 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Users</h4>
-        <p class="text-muted mb-4">Create Users</p>
+        <h4 class="card-title">Add Details</h4>
         <form id="signupForm">
           
-
             <div class="row mb-3">
-                <div class="col-md-12">
+                <div class="col-md-6 mb-2">
                     <label for="name" class="form-label">Name</label>
                     <input id="name" class="form-control" name="name" type="text" autocomplete="off" required placeholder="Full Name">
                 </div>
-
                 
-               
-            </div>
-
-            <div class="row mb-3">
-              <div class="col-md-6">
-                <label for="employee_number" class="form-label">Employee Number</label>
-                <input id="employee_number" class="form-control" name="employee_number" type="text" autocomplete="off" required placeholder="Employee Number">
-              </div>
-
-              <div class="col-md-6">
-                <label for="phone_number" class="form-label">Phone Number</label>
-                <input id="phone_number" class="form-control" name="phone_number" type="text" autocomplete="off" required placeholder="+25471000000">
-              </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="" class="form-label">Designation</label>
-                    <input id="designation" class="form-control" name="designation" type="text" autocomplete="off" required placeholder="User Designation">
+                <div class="col-md-6 mb-2">
+                  <label for="employee_number" class="form-label">Employee Number</label>
+                  <input id="employee_number" class="form-control" name="employee_number" type="text" autocomplete="off" required placeholder="Employee Number">
                 </div>
-                <div class="col-md-6">
-                    <label for="" class="form-label">Email</label>
-                    <input id="email" class="form-control" name="email" type="email" autocomplete="off" required placeholder="user@mail.com">
-              </div>
+
+                <div class="col-md-6 mb-2">
+                  <label for="phone_number" class="form-label">Phone Number</label>
+                  <input id="phone_number" class="form-control" name="phone_number" type="text" autocomplete="off" required placeholder="+25471000000">
+                </div>
+
+                <div class="col-md-6 mb-2">
+                  <label for="" class="form-label">Designation</label>
+                  <input id="designation" class="form-control" name="designation" type="text" autocomplete="off" required placeholder="User Designation">
+                </div>
+
+                <div class="col-md-6 mb-2">
+                  <label for="" class="form-label">Email</label>
+                  <input id="email" class="form-control" name="email" type="email" autocomplete="off" required placeholder="user@mail.com">
+                </div>
+
+                <div class="col-md-6 mb-2">
+                  <label for="role" class="form-label">Sytem Role</label>
+                  <select class="js-example-basic-single form-select" name="role" id="role" required>
+                      
+                      <option  value="admin">{{strtolower('ADMIN')}}</option>
+                      <option  value="cp">{{strtolower('COUNTY PHARMACIST')}}</option>
+                      <option  value="cd">{{strtolower('MEDICAL DEPARTMENT DIRECTOR')}}</option>
+                      <option  value="co">{{strtolower('MEDICAL DEPARTMENT CHIEF OFFICER')}}</option>
+                      <option  value="ee">{{strtolower('EXECUTIVE')}}</option>
+                      <option  value="hfp">{{strtolower('HEALTH FACILITIES PHARMACIST')}}</option>
+                      <option  value="scp">{{strtolower('SUB-COUNTY PHARMACIST')}}</option>
+                     
+                  </select>
+                </div>
+  
+                <div class="col-md-6 mt-2" id="facility-div">
+                  <label for="facility" class="form-label">Select User Facility</label>
+                  <select class="js-example-basic-single form-select" name="facility" id="facility">
+                      <option value="0">Select Facility</option>
+                      @foreach ($facilities as $facility)
+                          <option  value="{{$facility->id}}">{{$facility->name}}</option>
+                      @endforeach
+                  </select>
+                </div>
+
             </div>
-
-            <div class="row mb-3">
-              
-
-              <div class="col-md-6">
-                <label for="role" class="form-label">Sytem Role</label>
-                <select class="form-select" name="role" id="role" required>
-                    
-                    <option  value="admin">{{strtolower('ADMIN')}}</option>
-                    <option  value="cp">{{strtolower('COUNTY PHARMACIST')}}</option>
-                    <option  value="cd">{{strtolower('MEDICAL DEPARTMENT DIRECTOR')}}</option>
-                    <option  value="co">{{strtolower('MEDICAL DEPARTMENT CHIEF OFFICER')}}</option>
-                    <option  value="ee">{{strtolower('EXECUTIVE')}}</option>
-                    <option  value="hfp">{{strtolower('HEALTH FACILITIES PHARMACIST')}}</option>
-                    <option  value="scp">{{strtolower('SUB-COUNTY PHARMACIST')}}</option>
-                   
-                </select>
-              </div>
-
-              <div class="col-md-6" id="facility-div">
-                <label for="facility" class="form-label">Select User Facility</label>
-                <select class="form-select" name="facility" id="facility">
-                    <option value="0">Select Facility</option>
-                    @foreach ($facilities as $facility)
-                        <option  value="{{$facility->id}}">{{$facility->name}}</option>
-                    @endforeach
-                </select>
-              </div>
              
-            </div>
-
             <a class="btn btn-success" type="submit" value="Submit" id="submits">Submit <span style="position: relative; top:2px; left: 2px" ><ion-icon name="checkbox-outline"></ion-icon></span></a>
 
         </form>

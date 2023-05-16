@@ -35,11 +35,8 @@
 
   <div class="flex-initial"></div>
 
-  <div>
-    
-        
-        <a href="{{route('users.create')}}"><button type="button" class="btn btn-primary" style="width: 100%">Add User <span class="ml-2 mt-2 pt-2"><ion-icon name="add-circle-outline"></ion-icon></span></button></a>
-
+  <div>          
+    <a href="{{route('users.create')}}"><button type="button" class="btn btn-primary" style="width: 100%">Add User <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></button></a>
   </div>
 </nav>
 

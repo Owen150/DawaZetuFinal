@@ -39,18 +39,17 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Tables </a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+    <li class="breadcrumb-item"><a href="#">Supplier Products</a></li>
   </ol>
   
   <div class="btn-div">
       
-    <a href="{{route('suppler-products.create')}}"><button type="button" class="btn btn-primary" >Add Supplier Product <span class="ml-2 mt-2 pt-2"><ion-icon name="add-circle-outline"></ion-icon></span></button></a>
+    <a href="{{route('suppler-products.create')}}"><button type="button" class="btn btn-primary" >Add Supplier Product <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></button></a>
 
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Export Excel <span class="ml-2 mt-2 pt-2"><ion-icon name="chevron-up-circle-outline"></ion-icon></span></button>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Export Excel <span style="position: relative; top:2px; left: 2px"><ion-icon name="chevron-up-circle-outline"></ion-icon></span></button>
 
 
-    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#receiveModal">Import Excel <span class="ml-2 mt-2 pt-2"><ion-icon name="chevron-down-circle-outline"></ion-icon></span></button>
+    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#receiveModal">Import Excel <span style="position: relative; top:2px; left: 2px"><ion-icon name="chevron-down-circle-outline"></ion-icon></span></button>
 
   </div>
   
@@ -80,17 +79,14 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Data Table</h6>
-        <p class="text-muted mb-3">List of all suppliers and their coresponding product and product code</p>
         <div class="table-responsive">
-            
           <table id="dataTableExample" class="table table-striped table-bordered" data-sorting="false">
             <thead style="">
               <tr>
                 <th>#</th>
                 <th>Supplier</th>
-                <th>Product</th>
-                <th>Code</th>
+                <th>Product Name</th>
+                <th>Product Code</th>
                 <th>Price</th>
                 
               </tr>

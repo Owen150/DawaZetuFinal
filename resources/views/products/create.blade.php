@@ -55,17 +55,17 @@
 
           <div class="col-md-6 mb-3">
             <label for="exampleInputUsername2">Manufacturers</label>
-            <input type="text" name="manufacturers" class="form-control" placeholder="manufacturers" required>
+            <select type="text" name="manufacturers" class="js-example-basic-single form-select" placeholder="manufacturers" required></select>
           </div>
 
           <div class="col-md-6 mb-3">
             <label for="exampleInputUsername2">Strength</label>
-            <input type="number" name="strength" class="form-control" placeholder="strength" required>
+            <input type="text" name="strength" class="form-control" placeholder="strength" required>
           </div>
 
           <div class="col-md-6 mb-3">
             <label for="exampleInputUsername2">Unit of Measure</label>
-            <input type="text" name="unit_of_measure" class="form-control" placeholder="unit of measure" required>
+            <select type="text" name="unit_of_measure" class="js-example-basic-single form-select" placeholder="unit of measure" required></select>
           </div>
 
           <div class="col-md-6 mb-3">
@@ -73,20 +73,11 @@
             <input type="text" name="package_size" class="form-control" placeholder="package size" required>
           </div>
 
-          <div class="col-md-6 mb-3">
-            <label for="exampleInputUsername2">Package Quantity</label>
-            <input type="number" name="package_quantity" class="form-control" placeholder="package quantity" required>
-          </div>
-
-          <div class="col-md-6 mb-3">
-            <label for="exampleInputUsername2">Number of Items in Box</label>
-            <input type="number" name="no_of_items_in_box" class="form-control" placeholder="Items in box" required>
-          </div>
-
+        
         </div>
 
         <div>
-          <button type="submit" class="btn btn-success mt-3">Submit</button>
+          <button type="submit" class="btn btn-success">Submit <span style="position: relative; top:2px; left: 2px" ><ion-icon name="checkbox-outline"></ion-icon></span></button>
         </div>
         </form>
 

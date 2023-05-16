@@ -39,8 +39,7 @@
                 <div class="row">
                     <div class="d-flex">
                         <div class="col-sm-10">
-                            <h3 class="card-title">Create Supplier</h3>
-                            <p class="text-muted">Fill out details to create new supplier</p>
+                            <h3 class="card-title">Add Details</h3>
                         </div>
                     </div>
                 </div>
@@ -64,7 +63,7 @@
                         <div class="col-sm-4">
                             <div class="mb-3">
                                 <label class="form-label" for="rank">Rank</label>
-                                <select class="form-select" name="rank" id="rank" required>
+                                <select class="js-example-basic-single form-select" name="rank" id="rank" required>
                     
                                     <option  value="1">One</option>
                                     <option  value="2">Two</option>
@@ -87,20 +86,20 @@
                         </div><!-- Col -->
                         <div class="col-sm-4">
                             <div class="mb-3">
-                                <label class="form-label" for="contracts">Contracts</label>
-                                <input required type="text" class="form-control" name="contracts" placeholder="Enter your Contracts">
+                                <label class="form-label" for="contracts">Contract</label>
+                                <input required type="text" class="form-control" name="contracts" placeholder="Enter Contract">
                             </div>
                         </div><!-- Col -->
                         <div class="col-sm-4">
                             <div class="mb-3">
-                                <label class="form-label" for="contract_number">Contract Number</label>
-                                <input required type="text" class="form-control" name="contract_number" placeholder="Enter contract number">
+                                <label class="form-label" for="contract_number">Contact Number</label>
+                                <input required type="text" class="form-control" name="contract_number" placeholder="Enter contact number">
                             </div>
                         </div><!-- Col -->
                     </div><!-- Row -->
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-success submit">Submit form</button>
+                    <button type="submit" class="btn btn-success submit">Submit form <span style="position: relative; top:2px; left: 2px" ><ion-icon name="checkbox-outline"></ion-icon></span></button>
                 </div>
             </form>
         </div>
