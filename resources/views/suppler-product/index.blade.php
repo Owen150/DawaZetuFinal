@@ -85,8 +85,8 @@
               <tr>
                 <th>#</th>
                 <th>Supplier</th>
-                <th>Product Name</th>
                 <th>Product Code</th>
+                <th>Product Name</th>
                 <th>Price</th>
                 
               </tr>
@@ -206,8 +206,8 @@
                             <td>
                               ${element.suplier_id}
                               </td>
-                            <td>${element.product_id}</td>
                             <td>${element.suplier_product_code}</td>
+                            <td>${element.product_id}</td>
                             <td>${element.price}</td>
                            
                            

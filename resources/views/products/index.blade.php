@@ -41,12 +41,11 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb" style="flex-none">
-    <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Products</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Products Table</li>
+    <li class="breadcrumb-item active"><a href="{{ route('products.index') }}">Products</a></li>
   </ol>
   <div class="cancel">
     <div></div>
-    <a href="{{route('products.create')}}"><button class="btn btn-primary">Add New Product <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
+    <a href="{{route('products.create')}}"><button class="btn btn-primary">Add Product <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
   </div>
 </nav>
 
@@ -62,10 +61,11 @@
               <tr>
                 <th>#</th>
                 <th>Product Name</th>
+                <th>Category</th>
+                <th>Strength</th>
+                <th>Manufacturer</th>
                 <th>Unit of Measure</th>
                 <th>Package Size</th>
-                <th>Package Quantity</th>
-                <th>Items in Box</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -77,10 +77,11 @@
                     <td>{{ $number }}</td>
                     <?php $number++; ?>
                     <td>{{ $product->product_name }}</td>
+                    <td>{{ App\Models\Category::where('id','=', $product->category_id)->first()->category_name }}</td>
+                    <td>{{ $product->strength }}</td>
+                    <td>{{ $product->manufacturers }}</td>
                     <td>{{ $product->unit_of_measure }}</td>
                     <td>{{ $product->package_size }}</td>
-                    <td>{{ $product->package_quantity }}</td>
-                    <td>{{ $product->no_of_items_in_box }}</td>
                     <td class="my-td">
                       
                         <a class="text-success"  href="{{ route('products.edit', $product->id) }}">Edit</a>
