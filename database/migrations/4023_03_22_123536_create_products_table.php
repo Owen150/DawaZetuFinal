@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->string('product_name');
             $table->string('manufacturers');
-            $table->integer('strength');
+            $table->string('strength');
             $table->string('unit_of_measure');
             $table->string('package_size');
             $table->integer('package_quantity');

@@ -52,7 +52,7 @@ class CountyTopUpRequestController extends Controller
     public function show($id)
     {
         $topups = StoreTopUp::find($id);
-        $topupdetails = StoreTopUpDetails::find($id);
+        $topupdetails = StoreTopUpDetails::where('request_id', '=', $topups->id )->get();
         return view('county-top-up-requests.processed', compact('topups', 'topupdetails'));
     }
 
@@ -77,7 +77,9 @@ class CountyTopUpRequestController extends Controller
     public function update(Request $request, $id)
     {
         $topups = StoreTopUp::find($id);
+        $topups->status = $request->status;
         $topups->status = 'approved';
+
         if ($topups->update()) {
             return redirect()->back()
                 ->with('success', 'Status updated successfully');
@@ -97,7 +99,8 @@ class CountyTopUpRequestController extends Controller
         //
     }
 
-    public function comment(Request $request, $id){
+    public function comment(Request $request, $id)
+    {
         $topups = StoreTopUp::find($id);
         $topups->comment = $request->comment;
         $topups->status = 'ammended';
@@ -107,5 +110,6 @@ class CountyTopUpRequestController extends Controller
                 ->with('success', 'Status updated successfully');
         }
         return redirect()->back()
-            ->with('unsuccess', 'System Error');    }
+            ->with('unsuccess', 'System Error');
+    }
 }

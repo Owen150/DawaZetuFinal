@@ -87,13 +87,10 @@
                 <th>Supplier</th>
                 <th>Product Code</th>
                 <th>Product Name</th>
-                <th>Price</th>
-                
+                <th>Price</th>     
               </tr>
             </thead>
-            <tbody id="rights-tbody">
-              
-              
+            <tbody id="rights-tbody">             
             </tbody>
           </table>
         </div>

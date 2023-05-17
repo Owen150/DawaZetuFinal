@@ -139,6 +139,10 @@ Route::group(['middleware' => ['auth', 'twofactor']], function () {
 
     //County Top Up Requests
     Route::resource('county-top-up-requests', CountyTopUpRequestController::class);
+    Route::get('processed/{id}', [CountyTopUpRequestController::class, 'show'])->name('showProcessed');
+    Route::post('/approved/{id}', [CountyTopUpRequestController::class, 'update'])->name('approvedRequest');
+    Route::post('/comment/{id}', [CountyTopUpRequestController::class, 'comment'])->name('appendComment');
+
 
     //Settings
     Route::get('settings', [SettingsController::class, 'index'])->name('settings_index');
