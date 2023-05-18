@@ -12,7 +12,7 @@
 @section('content')
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active"><a href="{{route('drawing-rights.index')}}">Edit Drawing Rights</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('drawing-rights.index')}}">Update Drawing Rights</a></li>
   </ol>
 </nav>
 

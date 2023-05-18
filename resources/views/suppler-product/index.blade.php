@@ -39,7 +39,7 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Supplier Products</a></li>
+    <li class="breadcrumb-item"><a href="#">Supplier Products Table</a></li>
   </ol>
   
   <div class="btn-div">

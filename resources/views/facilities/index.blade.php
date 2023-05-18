@@ -25,11 +25,11 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Facilities </a></li>
+    <li class="breadcrumb-item active"><a href="{{route('facility.index')}}">Facilities Table</a></li>
   </ol>
   <div class="flex-initial"></div>
   <div>     
-    <a href="{{route('facility.create')}}"><button type="button" class="btn btn-primary" style="width: 100%">Add Facility <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
+    <a href="{{route('facility.create')}}"><button type="button" class="btn btn-primary" style="width: 100%">Add New Facility <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
   </div>  
 </nav>
 

@@ -46,11 +46,10 @@
 @endif
 
 <div class="row">
-    <div class="col-md-12 stretch-card">
+    <div class="col-md-12 ">
         <div class="card">
             <div class="card-header"></div>
             <div class="card-body">
-                <h6 class="card-title">Product Manufacturers Table</h6>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="dataTableExample">
                         <thead>

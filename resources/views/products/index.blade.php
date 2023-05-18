@@ -41,7 +41,7 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb" style="flex-none">
-    <li class="breadcrumb-item active"><a href="{{ route('products.index') }}">Products</a></li>
+    <li class="breadcrumb-item active"><a href="{{ route('products.index') }}">Products Table</a></li>
   </ol>
   <div class="cancel">
     <div></div>
@@ -54,7 +54,6 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Products Table</h6>
         <div class="table-responsive">
           <table id="dataTableExample" class="table table-bordered table-striped mt-3">
             <thead>
