@@ -64,8 +64,7 @@
                   <h6>Designation</h6>
                   <p class="text-muted">{{ $user->designation }}</p>
                 </div>
-              </div>
-            
+              </div>            
             </div>
           </div>
         </div>

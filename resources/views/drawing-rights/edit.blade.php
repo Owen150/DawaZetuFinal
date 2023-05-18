@@ -12,7 +12,7 @@
 @section('content')
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active"><a href="{{route('drawing-rights.index')}}">Update Drawing Rights</a></li>
+    <li class="breadcrumb-item active"><a href="{{route('drawing-rights.index')}}">Edit Drawing Rights</a></li>
   </ol>
 </nav>
 
@@ -32,20 +32,19 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="" class="form-label">Financial Year</label>
-                    <input id="worload" class="form-control" name="worload" type="text" autocomplete="off" value="{{ App\Models\FinancialYear::where('id','=', $right->finacial_year_id)->first()->name }}">
+                    <input id="worload" class="form-control" name="worload" type="text" value="{{ App\Models\FinancialYear::where('id','=', $right->finacial_year_id)->first()->name }}" readonly>
                 </div>
                 <div class="col-md-6">
                     <label for="" class="form-label">Facility</label>
-                    <input id="worload" class="form-control" name="worload" type="text" autocomplete="off" value="{{ App\Models\Facility::where('id','=', $right->facility_id)->first()->name }}">
+                    <input id="worload" class="form-control" name="worload" type="text" value="{{ App\Models\Facility::where('id','=', $right->facility_id)->first()->name }}" readonly>
                 </div>                
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="" class="form-label">Workload</label>
-                    <input id="worload" class="form-control" name="worload" type="text" autocomplete="off" value="{{$right->workload}}">
+                    <input id="worload" class="form-control" name="worload" type="text" value="{{$right->workload}}">
                 </div>
                 <div class="col-md-6">
-  
                     <label for="" class="form-label">Period</label>
                     <select class="js-example-basic-single form-select" name="age_select" id="period">
                         <option @if($right->facility_id == 'Quanter 1') selected @endif >Quanter 1</option>

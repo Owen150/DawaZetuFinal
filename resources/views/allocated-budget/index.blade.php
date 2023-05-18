@@ -28,11 +28,11 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb" style="flex-none">
-    <li class="breadcrumb-item"><a href="#">Allocated Budget</a></li>
+    <li class="breadcrumb-item"><a href="#">Allocated Budget Table</a></li>
   </ol>
   <div class="cancel">
     <div></div>
-    <a href="{{ route('allocated-budget.create') }}" class="btn btn-primary">Add A New Allocated Budget <span class="ml-2 mt-2 pt-2"><ion-icon name="add-circle-outline"></ion-icon></span></a>
+    <a href="{{ route('allocated-budget.create') }}" class="btn btn-primary">Add Allocated Budget <span class="ml-2 mt-2 pt-2"><ion-icon name="add-circle-outline"></ion-icon></span></a>
   </div>
 </nav>
 

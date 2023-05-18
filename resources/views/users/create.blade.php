@@ -19,8 +19,7 @@
 
 <nav class="mynav page-breadcrumb" >
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Create</li>
+    <li class="breadcrumb-item active"><a href="{{route('users.create')}}">Add A New User</a></li>
   </ol>
 </nav>
 <div class="alert alert-success" role="alert" id="success">
@@ -35,12 +34,11 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Add Details</h4>
         <form id="signupForm">
           
             <div class="row mb-3">
                 <div class="col-md-6 mb-2">
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">User Name</label>
                     <input id="name" class="form-control" name="name" type="text" autocomplete="off" required placeholder="Full Name">
                 </div>
                 
@@ -55,7 +53,7 @@
                 </div>
 
                 <div class="col-md-6 mb-2">
-                  <label for="" class="form-label">Designation</label>
+                  <label for="" class="form-label">Gender</label>
                   <input id="designation" class="form-control" name="designation" type="text" autocomplete="off" required placeholder="User Designation">
                 </div>
 

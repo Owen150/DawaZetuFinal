@@ -37,11 +37,11 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active"><a href="#">Drawing Rights Table</a></li>   
+    <li class="breadcrumb-item active"><a href="{{route('drawing-rights.index')}}">Drawing Rights Table</a></li>   
   </ol>
   <div class="cancel">
     <div></div>    
-      <a href="{{route('drawing-rights.create')}}" class="btn btn-primary mb-md-0">Add New Drawing Rights <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></a>
+      <a href="{{route('drawing-rights.create')}}" class="btn btn-primary mb-md-0">Add Drawing Rights <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></a>
   </div>
 </nav>
 

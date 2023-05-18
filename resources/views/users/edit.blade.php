@@ -32,8 +32,6 @@
         <h4 class="card-title">User</h4>
         <p class="text-muted mb-4">Update user details</p>
         <form id="signupForm">
-          
-
             <div class="row mb-3">
                 <div class="col-md-12">
                     <label for="name" class="form-label">Name</label>

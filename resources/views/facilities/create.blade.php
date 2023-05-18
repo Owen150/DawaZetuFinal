@@ -22,8 +22,7 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{{route('facility.index')}}">Facilities</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Create</li>
+    <li class="breadcrumb-item active"><a href="{{route('facility.create')}}">Add New Facility</a></li>
   </ol>
   <div class="cancel">
     <div></div>
@@ -44,10 +43,7 @@
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Add details</h4>
         <form id="signupForm">
-          
-
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Name</label>

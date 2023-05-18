@@ -3,17 +3,13 @@
 @section('content')
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="">User Profile</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+    <li class="breadcrumb-item"><a href="{{ route('profile.edit', $user->id) }}">Edit User Profile</a></li>
   </ol>
 </nav>
 
   <div class="col-md-12">
     <div class="card">
       <div class="card-body">
-
-        <h3 class="card-title">Update Details</h3>
-
         <form action="{{ route('profile.update', $user->id) }}" method="POST">
             @csrf
             @method('PUT')
