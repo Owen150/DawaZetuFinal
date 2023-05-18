@@ -31,37 +31,23 @@
         <form id="signupForm">
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label for="email" class="form-label">Financial Year</label>
-                    <select class="form-select" name="age_select" id="finacial">
-                        <option @if($right->finacial_year_id == 1) selected @endif value="1">2009/2010</option>
-                        <option @if($right->finacial_year_id == 2) selected @endif value="2">2011/2012</option>
-                        <option @if($right->finacial_year_id == 3) selected @endif value="3">2013/2014</option>
-                        <option @if($right->finacial_year_id == 4) selected @endif value="4">2015/2016</option>
-                        <option @if($right->finacial_year_id == 5) selected @endif value="5">2017/2018</option>
-                        <option @if($right->finacial_year_id == 6) selected @endif value="6">2019/2020</option>
-                    </select>
+                    <label for="" class="form-label">Financial Year</label>
+                    <input id="worload" class="form-control" name="worload" type="text" autocomplete="off" value="{{ App\Models\FinancialYear::where('id','=', $right->finacial_year_id)->first()->name }}">
                 </div>
                 <div class="col-md-6">
-                    <label for="name" class="form-label">Facility</label>
-                    <select class="form-select" name="age_select" id="facility">
-                        <option @if($right->facility_id == 1) selected @endif value="1">Facility 1</option>
-                        <option @if($right->facility_id == 2) selected @endif value="2">Facility 2</option>
-                        <option @if($right->facility_id == 3) selected @endif value="3">Facility 3</option>
-                        <option @if($right->facility_id == 4) selected @endif value="4">Facility 4</option>
-                        <option @if($right->facility_id == 5) selected @endif value="5">Facility 5</option>
-                    </select>
-                </div>
-                
+                    <label for="" class="form-label">Facility</label>
+                    <input id="worload" class="form-control" name="worload" type="text" autocomplete="off" value="{{ App\Models\Facility::where('id','=', $right->facility_id)->first()->name }}">
+                </div>                
             </div>
-
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="" class="form-label">Workload</label>
                     <input id="worload" class="form-control" name="worload" type="text" autocomplete="off" value="{{$right->workload}}">
                 </div>
                 <div class="col-md-6">
+  
                     <label for="" class="form-label">Period</label>
-                    <select class="form-select" name="age_select" id="period">
+                    <select class="js-example-basic-single form-select" name="age_select" id="period">
                         <option @if($right->facility_id == 'Quanter 1') selected @endif >Quanter 1</option>
                         <option @if($right->facility_id == 'Quanter 2') selected @endif>Quanter 2</option>
                         <option @if($right->facility_id == 'Quanter 3') selected @endif>Quanter 3</option>

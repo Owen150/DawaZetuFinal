@@ -9,6 +9,10 @@
         border-top-style: solid;
 
     }
+    .mynav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
     .cancel{
     display: flex;
     flex-direction: row-reverse;
@@ -18,22 +22,16 @@
 @endpush
 
 @section('content')
-
-
-<div class="row mb-3">
-    <div class="col-sm-9">
-        <nav class="page-breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('suppliers.index') }}">Suppliers</a></li>
-                {{-- <li class="breadcrumb-item active" aria-current="page">Create Supplier</li> --}}
-            </ol>
-        </nav>
-    </div>
+<nav class="mynav page-breadcrumb">
+    <ol class="breadcrumb" style="flex-none">
+        <li class="breadcrumb-item"><a href="{{ route('suppliers.index') }}">Suppliers</a></li>
+        {{-- <li class="breadcrumb-item active" aria-current="page">Create Supplier</li> --}}
+    </ol>
     <div class="cancel">
         <div></div>
         <a href="{{route('suppliers.create')}}"><button class="btn btn-primary">Add New Supplier <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
     </div>
-</div>
+</nav>
 
 @if (session('status'))
 <div class="alert alert-success d-flex alert-dismissible fade show" role="alert">
@@ -62,8 +60,8 @@
                                 <th class="pt-0">License</th>
                                 <th class="pt-0">Location</th>
                                 <th class="pt-0">Rank</th>
-                                <th class="pt-0">Contract No.</th>
-                                <th>More</th>
+                                <th class="pt-0">Contact No.</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>

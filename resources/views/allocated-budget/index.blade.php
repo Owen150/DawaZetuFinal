@@ -29,7 +29,6 @@
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb" style="flex-none">
     <li class="breadcrumb-item"><a href="#">Allocated Budget</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Management</li>
   </ol>
   <div class="cancel">
     <div></div>
@@ -62,8 +61,6 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Data Table</h6>
-        <p class="text-muted mb-3">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p>
         <div class="table-responsive">
             
           <table id="dataTableExample" class="table table-striped table-bordered" data-sorting="false">
@@ -154,7 +151,7 @@
                         <tr>
                             <td>${count}</td>
                             <td>${responses[i].financial_year}</td>
-                            <td>${responses[i].period}</td>
+                            <td>Quarter ${responses[i].period}</td>
                            
                             <td>${responses[i].budget}</td>
                             

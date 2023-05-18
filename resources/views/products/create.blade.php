@@ -40,7 +40,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="exampleInputUsername2">Category</label>
-              <select class="form-select" name="category_id" id="categories">
+              <select class="js-example-basic-single form-select" name="category_id" id="categories">
                   @foreach ($categories as $category)
                   <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                   @endforeach

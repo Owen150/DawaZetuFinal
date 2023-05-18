@@ -82,7 +82,7 @@
       <li class="nav-item {{ active_class(['financialYear']) }}">
         <a href="{{ route('financialYear.index') }}" class="nav-link">
           <ion-icon class="link-icon" name="calendar-outline"></ion-icon>
-          <span class="link-title">Financial Year</span>
+          <span class="link-title">Financial Years</span>
         </a>
       </li>
 
