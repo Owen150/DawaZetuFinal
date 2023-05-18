@@ -11,10 +11,13 @@
     }
 
     .rights-nav {
-        display: grid;
-        grid-template-columns: 1fr 55vw 1fr;
+      display: grid;
+    grid-template-columns: 1fr 1fr;
     }
-
+    .cancel{
+    display: flex;
+    flex-direction: row-reverse;
+   }
     .action-grid {
         
         
@@ -34,14 +37,12 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Drawing Rights Table</a></li>   
+    <li class="breadcrumb-item active"><a href="#">Drawing Rights Table</a></li>   
   </ol>
-  <div class="flex-initial"></div>
-  <div>    
-    <a href="{{route('drawing-rights.create')}}" type="button" class="btn btn-primary" style="width: 100%">Add New Rights <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></a>
+  <div class="cancel">
+    <div></div>    
+      <a href="{{route('drawing-rights.create')}}" class="btn btn-primary mb-md-0">Add New Drawing Rights <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></a>
   </div>
-
-  
 </nav>
 
 @if (Session::has('success'))

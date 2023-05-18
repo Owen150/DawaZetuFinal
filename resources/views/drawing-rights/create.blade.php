@@ -39,8 +39,7 @@
   @csrf
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{{route('drawing-rights.index')}}">Drawing rights</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Create</li>
+    <li class="breadcrumb-item"><a href="{{route('drawing-rights.create')}}">Add New Drawing rights</a></li>
   </ol>
   <div class="cancel">
     <div></div>

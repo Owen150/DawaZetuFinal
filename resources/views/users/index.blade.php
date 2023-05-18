@@ -29,14 +29,11 @@
 @section('content')
 <nav class="page-breadcrumb rights-nav">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Tables</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+    <li class="breadcrumb-item active"><a href="{{ route('users.index') }}">Users Table</a></li>
   </ol>
-
   <div class="flex-initial"></div>
-
   <div>          
-    <a href="{{route('users.create')}}"><button type="button" class="btn btn-primary" style="width: 100%">Add User <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></button></a>
+    <a href="{{route('users.create')}}"><button type="button" class="btn btn-primary" style="width: 100%">Add A New User <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></button></a>
   </div>
 </nav>
 
@@ -52,21 +49,19 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Staff Table</h6>
-        <p class="text-muted mb-3"></p>
-        <div class="table-responsive">
-            
+        <div class="table-responsive">           
           <table id="dataTableExample" class="table table-striped table-bordered">
             <thead style="">
               <tr>
                 <th>#</th>
                 <th>Name</th>
-                <th>Emp Num</th>
-                <th>Facility</th>
-                <th>Designation</th>
+                <th>Employee No</th>
+                <th>Gender</th>
                 <th>Role</th>
+                <th>Facility</th>
+                <th>Phone No</th>
                 <th>Email</th>
-                <th>Actions</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody id="rights-tbody">
@@ -153,15 +148,12 @@
                             <td>${count}</td>
                             <td>${responses[i].name}</td>
                             <td>${responses[i].employee_number}</td>
-                            <td>
-                              ${facil}
-                            </td>
                             <td>${responses[i].designation}</td>
                             <td>${responses[i].role}</td>
+                            <td>${facil}</td>
+                            <td>${responses[i].phone_number}</td>
                             <td>${responses[i].email}</td>
-                           
-                            <td style="display: flex; gap: 10px">
-                                
+                            <td style="display: flex; gap: 10px">                                
                                 <a class="text-success" href="/users/${responses[i].id}/edit"><span>Edit</span></a>
                                 <span class="text-danger delete-hover"  onClick="deletes(${responses[i].id})">Delete</span>
                             </td>
