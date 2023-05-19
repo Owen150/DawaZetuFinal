@@ -83,15 +83,13 @@
 
               <div class="col-md-6">
                 <label for="contact_num" class="form-label">Sub County</label>
-
                 <select class="js-example-basic-single form-select" name="sub_county" id="sub_county">
                   <option value="0">Select Subcounty</option>
                   @foreach ($subcounty as $subcounty)
-                      <option  value="{{$subcounty->id}}">{{$subcounty->subcounty_name}}</option>
+                      <option  value="{{$subcounty->subcounty_name}}">{{$subcounty->subcounty_name}}</option>
                   @endforeach
                 </select>
-              </div>
-             
+              </div>             
             </div>
 
             <div class="row mb-3">
@@ -100,7 +98,7 @@
                   <select class="js-example-basic-single form-select" name="ward" id="ward">
                     <option value="0">Select Ward</option>
                     @foreach ($wards as $wards)
-                        <option  value="{{$wards->id}}">{{$wards->ward_name}}</option>
+                        <option  value="{{$wards->ward_name}}">{{$wards->ward_name}}</option>
                     @endforeach
                   </select>
               </div>
@@ -110,12 +108,12 @@
                 <select class="js-example-basic-single form-select" name="location" id="location">
                   <option value="0">Select Location</option>
                   @foreach ($location as $location)
-                      <option  value="{{$location->id}}">{{$location->location_name}}</option>
+                      <option  value="{{$location->location_name}}">{{$location->location_name}}</option>
                   @endforeach
                 </select>
-              </div>
-             
+              </div>             
             </div>
+            
             <input class="btn  btn-success" type="submit" value="Submit" id="submits">
 
         </form>

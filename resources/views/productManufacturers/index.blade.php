@@ -45,83 +45,77 @@
 </div>
 @endif
 
-<div class="row">
-    <div class="col-md-12 ">
-        <div class="card">
-            <div class="card-header"></div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered" id="dataTableExample">
-                        <thead>
-                            <tr>
-                                <th class="pt-0">#</th>
-                                <th class="pt-0">Name</th>
-                                <th class="pt-0">Location</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $number = 1; ?>
-                            @foreach ($productManufacturers as $productManufacturer)
-                            <tr>
-                                <td>{{ $number }}</td>
-                                <?php $number++; ?>
+<div class="col-md-12 ">
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" id="dataTableExample">
+                    <thead>
+                        <tr>
+                            <th class="pt-0">#</th>
+                            <th class="pt-0">Manufacturer Name</th>
+                            <th class="pt-0">Manufacturer Location</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $number = 1; ?>
+                        @foreach ($productManufacturers as $productManufacturer)
+                        <tr>
+                            <td>{{ $number }}</td>
+                            <?php $number++; ?>
 
-                                <td>{{ $productManufacturer->name }}</td>
+                            <td>{{ $productManufacturer->name }}</td>
 
-                                <td>{{ $productManufacturer->location }}</td>
+                            <td>{{ $productManufacturer->location }}</td>
 
-                                <td>
-                                    <div class="row">
-                                        <div class="d-flex">
-                                            <div style="padding-right:5px;">
-                                                <a href="{{ url('productManufacturers/' .$productManufacturer->id . '/edit') }}">
-                                                    Edit
-                                                </a>
-                                            </div>
+                            <td>
+                                <div class="row">
+                                    <div class="d-flex">
+                                        <div style="padding-right:5px;">
+                                            <a href="{{ url('productManufacturers/' .$productManufacturer->id . '/edit') }}">
+                                                Edit
+                                            </a>
+                                        </div>
 
-                                            {{-- DISABLE MANUFACTURER --}}
+                                        {{-- DISABLE MANUFACTURER --}}
 
-                                            <div style="padding-right:5px;">
-                                                <form role="form" method="post"
-                                                    action="{{ url('disable/'.$productManufacturer->id .'/edit' )}}"
-                                                    accept-charset="UTF-8">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    @if ( $productManufacturer->disabled == true )
-                                                    <button type="submit" class="btn btn-sm btn-primary"
-                                                        data-toggle="tooltip" data-placement="top" title="Enable">
-                                                        Enable
-                                                    </button>
-                                                    @elseif ( $productManufacturer->disabled == false )
-                                                    <button type="submit" class="btn btn-sm btn-warning"
-                                                        data-toggle="tooltip" data-placement="top" title="Disable">
-                                                        Disable
-                                                    </button>
-                                                    @endif
-
-
-                                                </form>
-                                            </div>
-
-                                            {{-- END DISABLE MANUFACTURER --}}
-
-
-                                            <form action="{{ url('productManufacturers/'.$productManufacturer->id) }}"
-                                                method="post">
+                                        <div style="padding-right:5px;">
+                                            <form role="form" method="post"
+                                                action="{{ url('disable/'.$productManufacturer->id .'/edit' )}}"
+                                                accept-charset="UTF-8">
                                                 @csrf
-                                                @method('DELETE')
-                                                <input type="submit" value="Delete">
-
+                                                @method('PUT')
+                                                @if ( $productManufacturer->disabled == true )
+                                                <button type="submit" class="btn btn-sm btn-primary"
+                                                    data-toggle="tooltip" data-placement="top" title="Enable">
+                                                    Enable
+                                                </button>
+                                                @elseif ( $productManufacturer->disabled == false )
+                                                <button type="submit" class="btn btn-sm btn-warning"
+                                                    data-toggle="tooltip" data-placement="top" title="Disable">
+                                                    Disable
+                                                </button>
+                                                @endif
                                             </form>
                                         </div>
+
+                                        {{-- END DISABLE MANUFACTURER --}}
+
+
+                                        <form action="{{ url('productManufacturers/'.$productManufacturer->id) }}"
+                                            method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" value="Delete">
+                                        </form>
                                     </div>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
