@@ -21,15 +21,14 @@
         <div class="col-sm-9">
             <div class="flex-initial">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Facility Products</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Create Facility Products</li>
+                    <li class="breadcrumb-item active"><a href="#">Add New Facility Product </a></li>
                 </ol>
             </div>
         </div>
         <div class="col-sm-3">
             <div>
-                <a href="{{route('facilityProducts.create')}}"><button type="button" class="btn btn-primary mb-1 mb-md-0"
-                        style="width: 100%">Create Facility Products</button></a>
+                <a href="{{route('facilityProducts.create')}}"><button type="button" class="btn btn-primary"
+                        style="width: 100%">Add Facility Products <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
         
             </div>
         </div>
@@ -54,18 +53,16 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Facility Products</h6>
                 {{-- <p class="text-muted mb-3">Read the <a href="https://datatables.net/" target="_blank"> </p> --}}
-                <div class="table-responsive m-3">
+                <div class="table-responsive">
 
                     <table id="dataTableExample" class="table table-striped table-bordered">
                         <thead style="">
                             <tr>
                                 <th>#</th>
-                               
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Reorder Level</th>
+                                <th>Product Name</th>
+                                <th>Available Quantity</th>
+                                <th>Re-order Level</th>
                             </tr>
                         </thead>
                         <tbody id="rights-tbody">

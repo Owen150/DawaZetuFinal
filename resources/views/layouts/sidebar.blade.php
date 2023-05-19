@@ -193,6 +193,13 @@
         </a>
       </li>
 
+      <li class="nav-item {{ active_class(['roles']) }}">
+        <a href="{{ route('roles.index') }}" class="nav-link">
+          <ion-icon class="link-icon" name="enter-outline"></ion-icon>
+          <span class="link-title">Roles</span>
+        </a>
+      </li>
+
       <li class="nav-item {{ active_class(['settings']) }}">
         <a href="{{ route('settings_index') }}" class="nav-link">
           <ion-icon class="link-icon" name="settings-outline"></ion-icon>
@@ -255,7 +262,7 @@
       <li class="nav-item {{ active_class(['facilityProducts']) }}">
         <a href="{{ route('facilityProducts.index') }}" class="nav-link">
           <ion-icon class="link-icon" name="file-tray-full-outline"></ion-icon>
-          <span class="link-title">Stock</span>
+          <span class="link-title">Facility Stock</span>
         </a>
       </li>
 

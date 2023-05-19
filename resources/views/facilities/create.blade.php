@@ -83,7 +83,13 @@
 
               <div class="col-md-6">
                 <label for="contact_num" class="form-label">Sub County</label>
-                <input id="sub_county" class="form-control" name="sub_county" type="text" autocomplete="off" required placeholder="Sub county">
+
+                <select class="js-example-basic-single form-select" name="sub_county" id="sub_county">
+                  <option value="0">Select Subcounty</option>
+                  @foreach ($subcounty as $subcounty)
+                      <option  value="{{$subcounty->id}}">{{$subcounty->subcounty_name}}</option>
+                  @endforeach
+                </select>
               </div>
              
             </div>
@@ -91,12 +97,22 @@
             <div class="row mb-3">
               <div class="col-md-6">
                   <label for="ward" class="form-label">Ward</label>
-                  <input id="ward" class="form-control" name="ward" type="text" autocomplete="off" required placeholder="Ward">
+                  <select class="js-example-basic-single form-select" name="ward" id="ward">
+                    <option value="0">Select Ward</option>
+                    @foreach ($wards as $wards)
+                        <option  value="{{$wards->id}}">{{$wards->ward_name}}</option>
+                    @endforeach
+                  </select>
               </div>
 
               <div class="col-md-6">
                 <label for="location" class="form-label">Location</label>
-                <input id="location" class="form-control" name="location" type="text" autocomplete="off" required placeholder="Location">
+                <select class="js-example-basic-single form-select" name="location" id="location">
+                  <option value="0">Select Location</option>
+                  @foreach ($location as $location)
+                      <option  value="{{$location->id}}">{{$location->location_name}}</option>
+                  @endforeach
+                </select>
               </div>
              
             </div>
