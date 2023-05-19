@@ -518,7 +518,16 @@
 @endpush
 
 @push('custom-scripts')
-  <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+<script src="{{ asset('assets/js/dashboard.js') }}"></script>
+<script>
+    $(window).on('load', function() {
+      var is_modal_show = sessionStorage.getItem('alreadyShow');
+      if(is_modal_show != 'alredy shown'){
+        $('#myModal').modal('show');
+        sessionStorage.setItem('alreadyShow','alredy shown');
+      }
+    });
+</script>
 @endpush
 
 @push('plugin-scripts')
@@ -588,10 +597,4 @@
             }});
         });
         });
-</script>
-
-<script type="text/javascript">
-  $(window).on('load', function() {
-      $('#myModal').modal('show');
-  });
 </script>

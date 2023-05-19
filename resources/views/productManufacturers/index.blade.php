@@ -27,7 +27,7 @@
     </div>
     <div class="col-sm-3 flex-end">
         <div class="create-productManufacturer">
-            <a href="{{ route('productManufacturers.create') }}" style="width: 100%" class="btn btn-primary">Add A New
+            <a href="{{ route('productManufacturers.create') }}" style="width: 100%" class="btn btn-primary">Add New
                  Manufacturer <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span>
             </a>
         </div>

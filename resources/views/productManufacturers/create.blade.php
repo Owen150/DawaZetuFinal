@@ -16,53 +16,35 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('productManufacturers.index') }}">Product Manufacturers</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Create Product Manufacturer</li>
+        <li class="breadcrumb-item active"><a href="{{ route('productManufacturers.create') }}">Add Product Manufacturer</a></li>
     </ol>
     <div class="cancel">
         <div></div>
-        <a href="{{ route('productManufacturers.index') }}" class="btn btn-danger mb-md-0">Cancel <span><i
+        <a href="{{ route('productManufacturers.index') }}" class="btn btn-danger">Cancel <span><i
             class="fa-solid fa-ban"></i></span></a>
     </div>
 </nav>
 
-<div class="row">
-    <div class="col-md-12 stretch-card">
-        <div class="card">
-            <div class="card-header">
-                <div class="row">
-                    <div class="d-flex">
-                        <div class="col-sm-10">
-                            <h3 class="card-title">Create Product Manufacturers</h3>
-                            <p class="text-muted">Fill out details to create new Product Manufacturer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-body">
             <form method="POST" action="{{ url('/productManufacturers') }}">
-                <div class="card-body">
-                    @csrf
-                    <div class="row align-items-center">
-                        <div class="col-sm-4">
-                            <div class="mb-3">
-                                <label class="form-label" for="name">Name</label>
-                                <input required type="text" class="form-control" placeholder="Enter Name" id="name" name="name">
-                            </div>
-                        </div><!-- Col -->
-                        <div class="col-sm-4">
-                            <div class="mb-3">
-                                <label class="form-label" for="location">Location</label>
-                                <select class="form-select" aria-label="Default select example" required type="text" name="location">
-                                    <option selected value="local">Local</option>
-                                    <option value="foreign">Foreign</option>
-                                  </select>
-                            </div>
-                        </div><!-- Col -->
-                    </div><!-- Row -->
-                </div>
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-success submit">Submit form</button>
-                </div>
+                @csrf
+                <div class="row mb-3">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <label class="form-label" for="name">Manufacturer Name</label>
+                        <input required type="text" class="form-control" placeholder="Enter Name" id="name" name="name">
+                    </div><!-- Col -->
+
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <label class="form-label" for="location">Manufacturer Location</label>
+                        <select class="form-select" aria-label="Default select example" required type="text" name="location">
+                            <option selected value="local">Local</option>
+                            <option value="foreign">Foreign</option>
+                        </select>
+                    </div><!-- Col -->
+                </div><!-- Row -->
+                <button type="submit" class="btn btn-success submit">Submit <span style="position: relative; top:2px; left: 2px" ><ion-icon name="checkbox-outline"></ion-icon></span></button>
             </form>
         </div>
     </div>

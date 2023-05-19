@@ -15,13 +15,12 @@
 
 @section('content')
 
-<nav class="page-breadcrumb rights-nav">
-    
+<nav class="page-breadcrumb rights-nav">    
     <div class="row">
         <div class="col-sm-9">
             <div class="flex-initial">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active"><a href="#">Add New Facility Product </a></li>
+                    <li class="breadcrumb-item active"><a href="{{route('facilityProducts.index')}}">Add New Facility Product </a></li>
                 </ol>
             </div>
         </div>
@@ -72,8 +71,7 @@
                                     <td>{{ $number }}</td>
                                     <?php $number++; ?>
                                     <td>
-                                        @php
-                                            
+                                        @php                                            
                                             $productName = App\Models\Product::where('id', '=', $facilityProduct->product_id)->first()->product_name;
                                         @endphp
                                         {{$productName}}
@@ -85,8 +83,7 @@
                                             <p class="text-danger">{{$facilityProduct->quantity}}</p>
                                         @endif
                                     </td>
-                                    <td>{{$facilityProduct->reorder_level}}</td>
-                                   
+                                    <td>{{$facilityProduct->reorder_level}}</td>                                   
                                 </tr>
                             @endforeach
                         </tbody>
@@ -96,7 +93,6 @@
         </div>
     </div>
 </div>
-
 @endsection
 
 
