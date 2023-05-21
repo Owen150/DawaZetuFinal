@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\ProductManufacturers;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,9 @@ class ProductManufacturersController extends Controller
      */
     public function index()
     {
+        $location = Location::all();
         $productManufacturers = ProductManufacturers::all();
-        return view('productManufacturers.index', compact('productManufacturers'));
+        return view('productManufacturers.index', compact('productManufacturers', 'location'));
     }
 
     /**
@@ -25,7 +27,10 @@ class ProductManufacturersController extends Controller
      */
     public function create()
     {
-        return view('productManufacturers.create');
+        $location = Location::all();
+        return view('productManufacturers.create')->with([
+            'location' => $location
+        ]);
     }
 
     /**

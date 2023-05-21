@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\County;
 use App\Models\Facility;
 use App\Models\Location;
+use App\Models\Subcounty;
+use App\Models\Ward;
 use Illuminate\Http\Request;
 
 class FacilityController extends Controller
@@ -15,7 +18,6 @@ class FacilityController extends Controller
      */
     public function index()
     {
-        $locations = Location::all();
         return view('facilities.index');
     }
 
@@ -26,7 +28,14 @@ class FacilityController extends Controller
      */
     public function create()
     {
-        return view('facilities.create');
+        $subcounty = Subcounty::all();
+        $wards = Ward::all();
+        $location = Location::all();
+        return view('facilities.create')->with([
+            'subcounty' => $subcounty,
+            'wards' => $wards,
+            'location' => $location
+        ]);
     }
 
     /**
