@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('prescription_date');
             $table->string('prescription_cost')->nullable();
             $table->timestamps();
-            $table->boolean('status')->default(0);
+            $table->string('status')->default('pending');
         });
     }
 

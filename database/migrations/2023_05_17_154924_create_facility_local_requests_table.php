@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('facility_local_requests', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
-            $table->string('product_name');
-            $table->string('manufacturers');
-            $table->string('strength');
-            $table->string('unit_of_measure');
-            $table->string('package_size');
+            $table->string('requested_by');
+            $table->string('request_date');
+            $table->string('request_id')->unique();
+            $table->string('status');
+
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('facility_local_requests');
     }
 };

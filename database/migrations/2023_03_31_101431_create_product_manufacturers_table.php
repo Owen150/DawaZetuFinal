@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('product_manufacturers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('location');
             $table->boolean('disabled')->default(false);
             $table->softDeletes();
             $table->timestamps();

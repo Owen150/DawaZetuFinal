@@ -13,16 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('sub_counties', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
-            $table->string('product_name');
-            $table->string('manufacturers');
-            $table->string('strength');
-            $table->string('unit_of_measure');
-            $table->string('package_size');
+            $table->unsignedBigInteger('county_id');
+            $table->string('subcounty_name');
+            $table->foreign('county_id')->references('id')->on('counties');
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 
@@ -33,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('sub_counties');
     }
 };
