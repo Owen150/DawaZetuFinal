@@ -20,6 +20,7 @@ use App\Http\Controllers\ProductManufacturersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PurchaseOrderController;
 use App\Http\Controllers\PurchaseOrderDetailController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\SubCountyTopUpRequestController;
@@ -105,7 +106,6 @@ Route::group(['middleware' => ['auth', 'twofactor']], function () {
     Route::resource('profile', ProfileController::class)->except('index');
 
 
-
     Route::get('/facility-home', [HomeController::class, 'facilityDashboard'])->name('facility_home');
 
     Route::get('/home-scp', [HomeController::class, 'scpDashboard'])->name('scp_home');
@@ -133,6 +133,9 @@ Route::group(['middleware' => ['auth', 'twofactor']], function () {
     Route::post('/catalogue-upload', [SupplierProductCatalogueController::class, 'excelUpload'])->name('catalogue_upload');
 
     Route::post('/checkout/{id}', [CheckoutController::class, 'release'])->name('checkout');
+
+    //Roles
+    Route::resource('roles', RoleController::class);
 
     //Sub County Top Up Requests
     Route::resource('sub-county-top-up-requests', SubCountyTopUpRequestController::class);
