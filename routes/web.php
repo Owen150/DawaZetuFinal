@@ -153,6 +153,9 @@ Route::group(['middleware' => ['auth', 'twofactor']], function () {
     Route::post('/subcounty', [SettingsController::class, 'storeSubcounty'])->name('store_subcounty');
     Route::post('/ward', [SettingsController::class, 'storeWard'])->name('store_ward');
     Route::post('/location', [SettingsController::class, 'storeLocation'])->name('store_location');
+    Route::post('/financial-year', [SettingsController::class, 'storeFinancialYear'])->name('store_financial_year');
+    Route::post('/role', [SettingsController::class, 'storeRole'])->name('store_role');
+
 
     //File routes
     Route::get('/upload-file', [FileUploadController::class, 'createForm']);
