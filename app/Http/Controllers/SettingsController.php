@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\County;
+use App\Models\FinancialYear;
 use App\Models\Location;
+use App\Models\Role;
 use App\Models\Subcounty;
 use App\Models\Ward;
 use Illuminate\Http\Request;
@@ -21,8 +23,8 @@ class SettingsController extends Controller
         $subcounties = Subcounty::all();
         $wards = Ward::all();
         $locations = Location::all();
-        return view('settings.index', compact(['counties', 'subcounties', 'wards', 'locations']));
- 
+        $financialYears = FinancialYear::all();
+        return view('settings.index', compact(['counties', 'subcounties', 'wards', 'locations', 'financialYears']));
     }
 
     /**
@@ -133,7 +135,7 @@ class SettingsController extends Controller
             'county_id' => 'required',
             'subcounty_id' => 'required',
             'ward_id' => 'required',
-            'location_name'=> 'required'
+            'location_name' => 'required'
         ]);
 
         Location::create($request->all());
@@ -141,4 +143,28 @@ class SettingsController extends Controller
             ->with('success', 'Location Created Successfully');
     }
 
+    public function storeFinancialYear(Request $request)
+    {
+        $financialYears = new FinancialYear();
+        $financialYears->name = $request->input('name');
+        $financialYears->start_date = $request->input('start_date');
+        $financialYears->end_date = $request->input('end_date');
+        $financialYears->save();
+
+        return redirect()->route('settings_index')
+            ->with('success', 'Financial Year added successfully');
+    }
+
+    public function storeRole(Request $request)
+    {
+        $request->validate([
+            'role_name' => 'required',
+            'role_initials' => 'required'
+        ]);
+
+        Role::create($request->all());
+
+        return redirect()->route('settings_index')
+            ->with('success', 'Role created successfully');
+    }
 }
