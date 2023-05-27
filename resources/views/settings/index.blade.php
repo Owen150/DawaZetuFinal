@@ -26,9 +26,7 @@
               <li class="nav-item">
                 <a class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" role="tab" aria-controls="contact" aria-selected="false">Add Ward</a>
               </li> 
-              <li class="nav-item">
-                <a class="nav-link" id="email-tab" data-bs-toggle="tab" data-bs-target="#email" role="tab" aria-controls="email" aria-selected="false">Add Location</a>
-              </li>
+              
               
             </ul>
             <div class="tab-content mt-3" id="lineTabContent">
@@ -41,9 +39,7 @@
               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                 @include('settings.ward')
               </div>
-              <div class="tab-pane fade" id="email" role="tabpanel" aria-labelledby="email-tab">
-                @include('settings.location')
-              </div>           
+                        
             </div>
           </div>
 
@@ -73,26 +69,6 @@
 </div>
 <hr>
 
-<div class="row mt-4">
-  <div class="col-xl-12 main-content ps-xl-4 pe-xl-5">
-    <h5>Roles</h5>
-
-    <div class="mt-2">
-        <ul  class="nav nav-tabs nav-tabs-line" id="lineTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="role-tab" data-bs-toggle="tab" data-bs-target="#role" role="tab" aria-controls="role" aria-selected="false">Add New Role</a>
-          </li>
-        </ul>
-
-        <div class="tab-content mt-3" id="lineTabContent">
-          <div class="tab-pane fade show active" id="role" role="tabpanel" aria-labelledby="role-tab">
-            @include('settings.role')
-          </div>
-        </div>
-    </div>
-
-  </div>
-</div>
 @endsection
 
 @push('plugin-scripts')

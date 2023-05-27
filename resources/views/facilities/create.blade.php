@@ -56,10 +56,7 @@
                     <option selected >Level 1</option>
                     <option>Level 2</option>
                     <option>Level 3</option>
-                    <option>Level 4</option>
-                    <option>Level 5</option>
-                    <option>Level 6</option>
-                </select>
+                  </select>
               </div>
                
             </div>
@@ -102,16 +99,7 @@
                     @endforeach
                   </select>
               </div>
-
-              <div class="col-md-6">
-                <label for="location" class="form-label">Location</label>
-                <select class="js-example-basic-single form-select" name="location" id="location">
-                  <option value="0">Select Location</option>
-                  @foreach ($location as $location)
-                      <option  value="{{$location->location_name}}">{{$location->location_name}}</option>
-                  @endforeach
-                </select>
-              </div>             
+       
             </div>
             
             <input class="btn  btn-success" type="submit" value="Submit" id="submits">

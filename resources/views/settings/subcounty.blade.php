@@ -16,7 +16,12 @@
                     @endforeach
                 </select>
             </div>
-        </div>   
+        </div>
+        
+        <div class="col-md-6">
+            <label for="exampleInputUsername2" class="mb-2 mt-2">Status</label>
+            <input type="text" name="status" class="form-control" required>
+        </div>
 
         <div>
             <button type="submit" class="btn btn-primary mt-3">Add Subcounty <span style="position: relative; top:2px; left: 2px"><ion-icon name="add-circle-outline"></ion-icon></span></button>

@@ -27,13 +27,12 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
     <ol class="breadcrumb" style="flex-none">
-        <li class="breadcrumb-item"><a href="{{ route('financialYear.index') }}">Financial Years</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('facility-levels.index') }}">Facility Levels</a></li>
         {{-- <li class="breadcrumb-item active" aria-current="page">Create year</li> --}}
     </ol>
     <div class="cancel">
         <div></div>
-        <a  href="{{ route('financialYear.create') }}" class="btn btn-primary">Add
-            Financial Year <ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon>
+        <a  href="{{ route('facility-levels.create') }}" class="btn btn-primary">Add Facility Level <ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon>
         </a>
     </div>
 </nav>
@@ -50,6 +49,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
+
 <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
@@ -58,13 +58,10 @@
           <div class="table-responsive">
               
             <table id="dataTableExample" class="table table-striped table-bordered">
-              <thead style="">
+              <thead>
                 <tr>
                     <th>#</th>
-                    <th>Financial Year</th>
-                    <th>Year</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
+                    <th>Facility Level</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
@@ -72,37 +69,23 @@
               <tbody >
                 
                     <?php $number = 1; ?>
-                    @foreach ($financialYears as $financialYear)
+                    @foreach ($facilityLevels as $facilityLevel)
                     <tr>
                         <td>{{ $number }}</td>
                         <?php $number++; ?>
 
-                        <td>{{ $financialYear->financial_year }}</td>
+                        <td>{{ $facilityLevel->level }}</td>
 
-                        <td>{{ $financialYear->year }}</td>
+                        <td><span class="text-success">{{ $facilityLevel->status }}</span></td>
 
-                        <td>{{ $financialYear->start_date }}</td>
-
-                        <td>{{ $financialYear->end_date }}</td>
-
-                        <td>{{ $financialYear->status }}</td>
-
-                        <td>
-                            <div class="row">
-                                <div class="d-flex">
-                                    <div style="padding-right:10px;">
-                                        <a href="{{ url('financialYear/' .$financialYear->id . '/edit') }}"
-                                            class="text-success mr-3">
-                                            <button class="btn btn-sm btn-success">Edit <span><ion-icon style="position: relative; top:2px; left: 2px" name="create-outline"></ion-icon></span></button>                                            
-                                        </a>
-                                    </div>
-                                    <form action="{{ url('financialYear/'.$financialYear->id) }}" method="post" id="deleteFyear">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-sm btn-danger" id="delete-btn" onclick="submitForm()">Delete <span><ion-icon style="position: relative; top:2px; left: 2px" name="trash-outline"></ion-icon></span></button>
-                                    </form>
-                                </div>
-                            </div>
+                        <td style="display: flex; gap: 10px">
+                            <a href="" data-toggle="tooltip" data-placement="right" title="Enable Facility Level"><button class="btn btn-sm btn-success">Enable <span><ion-icon style="position: relative; top:2px; left: 2px" name="checkmark-outline"></ion-icon></span></button></a>
+                            <form id='frm'
+                             action="{{ route('products.destroy',$facilityLevel->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger" id="product-delete" class="text-danger" data-toggle="tooltip" data-placement="left" title="Disable Facility Level">Disable <span><ion-icon style="position: relative; top:2px; left: 2px" name="close-outline"></ion-icon></span></button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach
@@ -114,9 +97,7 @@
       </div>
     </div>
 </div>
-
 @endsection
-
 
 @push('plugin-scripts')
   <script src="{{ asset('assets/plugins/datatables-net/jquery.dataTables.js') }}"></script>
@@ -150,5 +131,10 @@
     function submitForm() {
         $('#deleteFyear').submit();
     }
+</script>
+<script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
 @endpush

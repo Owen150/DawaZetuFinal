@@ -74,7 +74,9 @@
                                     <div class="d-flex">
                                         <div style="padding-right:5px;">
                                             <a href="{{ url('productManufacturers/' .$productManufacturer->id . '/edit') }}">
-                                                Edit
+                                                <button class="btn btn-sm btn-primary">
+                                                    Edit
+                                                </button>
                                             </a>
                                         </div>
 
@@ -107,7 +109,7 @@
                                             method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <input type="submit" value="Delete">
+                                            <button class="btn btn-sm btn-warning" type="submit" value="Delete">Delete</button>
                                         </form>
                                     </div>
                                 </div>

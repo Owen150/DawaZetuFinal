@@ -200,6 +200,20 @@
         </a>
       </li>
 
+      <li class="nav-item {{ active_class(['facility-levels']) }}">
+        <a href="{{ route('facility-levels.index') }}" class="nav-link">
+          <ion-icon class="link-icon" name="settings-outline"></ion-icon>
+          <span class="link-title">Facility Levels</span>
+        </a>
+      </li>
+
+      <li class="nav-item {{ active_class(['subcounties']) }}">
+        <a href="{{ route('subcounties.index') }}" class="nav-link">
+          <ion-icon class="link-icon" name="settings-outline"></ion-icon>
+          <span class="link-title">Subcounties</span>
+        </a>
+      </li>
+
       <li class="nav-item {{ active_class(['settings']) }}">
         <a href="{{ route('settings_index') }}" class="nav-link">
           <ion-icon class="link-icon" name="settings-outline"></ion-icon>

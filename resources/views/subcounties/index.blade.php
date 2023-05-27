@@ -24,16 +24,15 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb" style="flex-none">
-    <li class="breadcrumb-item active"><a href="{{ route('roles.index') }}">Roles Table</a></li>
+    <li class="breadcrumb-item active"><a href="{{ route('subcounties.index') }}">Sub-counties Table</a></li>
   </ol>
   <div class="cancel">
     <div></div>
-    <a href="{{route('roles.create')}}"><button class="btn btn-primary">Add Role <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
+    <a href="{{route('subcounties.create')}}"><button class="btn btn-primary mb-1 mb-md-0">Add Sub-county <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
   </div>
 </nav>
 
 <div class="row">
-
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
@@ -42,32 +41,32 @@
           @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
           @endif
-
-          <table class="table table-bordered table-hover mt-3" id="dataTableExample">
+            
+          <table class="table table-bordered table-hover mt-3" id="dataTableExample" >
             <thead>
               <tr>
                 <th>#</th>
-                <th>Role Name</th>
-                <th>Status</th>
+                <th>SUBCOUNTY NAME</th>
+                <th>STATUS</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
                 <?php $number = 1; ?>
                                     
-                @foreach ($roles as $role)
+                @foreach ($subcounties as $subcounty)
                 <tr>
                     <td>{{ $number }}</td>
                     <?php $number++; ?>
-                    <td>{{ $role->role_name }}</td>
-                    <td><span class="text-success">{{ $role->status }}</span></td>
+                    <td>{{ $subcounty->subcounty_name }}</td>
+                    <td>{{ $subcounty->status }}</td>
                     <td style="display: flex; gap: 10px">
-                        <a href="{{ route('roles.edit', $role->id) }}" data-toggle="tooltip" data-placement="right" title="Enable Role"><button class="btn btn-sm btn-success">Enable <span><ion-icon style="position: relative; top:2px; left: 2px" name="checkmark-outline"></ion-icon></span></button></a>
+                        <a href="{{ route('subcounties.edit', $subcounty->id) }}" data-toggle="tooltip" data-placement="right" title="Enable Subcounty"><button class="btn btn-sm btn-success">Enable <span><ion-icon style="position: relative; top:2px; left: 2px" name="checkmark-outline"></ion-icon></span></button></a>
                         <form id='frm'
-                         action="{{ route('roles.destroy', $role->id) }}" method="post">
+                         action="{{ route('subcounties.destroy', $subcounty->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button id="profoma-delete" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="left" title="Disable Role">Disable <span><ion-icon style="position: relative; top:2px; left: 2px" name="close-outline"></ion-icon></span></button>
+                            <button class="btn btn-sm btn-danger" id="subcounty-delete" class="text-danger" data-toggle="tooltip" data-placement="left" title="Disable Subcounty">Disable <span><ion-icon style="position: relative; top:2px; left: 2px" name="close-outline"></ion-icon></span></button>
                         </form>
                     </td>
                 </tr>
@@ -91,17 +90,16 @@
   <script src="{{ asset('assets/js/data-table.js') }}"></script>
   <script defer>
     
-    var del = document.getElementById('profoma-delete');
+    var del = document.getElementById('subcounty-delete');
     var frm = document.getElementById('frm');
     del.addEventListener("click",function (e) {
         frm.submit();
     })
     
   </script>
-
   <script>
     $(function () {
     $('[data-toggle="tooltip"]').tooltip()
     })
-  </script>
+</script>
 @endpush

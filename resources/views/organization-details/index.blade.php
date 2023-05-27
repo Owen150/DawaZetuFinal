@@ -24,50 +24,50 @@
 @section('content')
 <nav class="mynav page-breadcrumb">
   <ol class="breadcrumb" style="flex-none">
-    <li class="breadcrumb-item active"><a href="{{ route('roles.index') }}">Roles Table</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('organization-details.index') }}">Organization Details</a></li>
   </ol>
   <div class="cancel">
     <div></div>
-    <a href="{{route('roles.create')}}"><button class="btn btn-primary">Add Role <span><ion-icon style="position: relative; top:2px; left: 2px" name="add-circle-outline"></ion-icon></span></button></a>
+    <a href="{{route('subcounties.create')}}"><button class="btn btn-success mb-1 mb-md-0">Add Sub-county</button></a>
   </div>
 </nav>
 
 <div class="row">
-
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
+        <h6 class="card-title">Sub-counties Table</h6>
         <div class="table-responsive">
 
           @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>
           @endif
-
-          <table class="table table-bordered table-hover mt-3" id="dataTableExample">
+            
+          <table class="table table-bordered table-hover mt-3" id="dataTableExample" >
             <thead>
               <tr>
-                <th>#</th>
-                <th>Role Name</th>
-                <th>Status</th>
+                <th>ID</th>
+                <th>COUNTY ID</th>
+                <th>CONSTITUENCY NAME</th>
+                <th>WARD</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-                <?php $number = 1; ?>
                                     
-                @foreach ($roles as $role)
+                @foreach ($subcounties as $subcounty)
                 <tr>
-                    <td>{{ $number }}</td>
-                    <?php $number++; ?>
-                    <td>{{ $role->role_name }}</td>
-                    <td><span class="text-success">{{ $role->status }}</span></td>
+                    <td>{{ $subcounty->id }}</td>
+                    <td>{{ App\Models\County::where('id','=', $subcounty->county_id)->first()->id }}</td>
+                    <td>{{ $subcounty->constituency_name }}</td>
+                    <td>{{ $subcounty->ward }}</td>
                     <td style="display: flex; gap: 10px">
-                        <a href="{{ route('roles.edit', $role->id) }}" data-toggle="tooltip" data-placement="right" title="Enable Role"><button class="btn btn-sm btn-success">Enable <span><ion-icon style="position: relative; top:2px; left: 2px" name="checkmark-outline"></ion-icon></span></button></a>
+                        <a href="{{ route('subcounties.edit', $subcounty->id) }}"><span class="text-success">Edit</span></a>
                         <form id='frm'
-                         action="{{ route('roles.destroy', $role->id) }}" method="post">
+                         action="{{ route('subcounties.destroy', $subcounty->id) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button id="profoma-delete" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="left" title="Disable Role">Disable <span><ion-icon style="position: relative; top:2px; left: 2px" name="close-outline"></ion-icon></span></button>
+                            <span id="subcounty-delete" class="text-danger">Delete</span>
                         </form>
                     </td>
                 </tr>
@@ -91,17 +91,11 @@
   <script src="{{ asset('assets/js/data-table.js') }}"></script>
   <script defer>
     
-    var del = document.getElementById('profoma-delete');
+    var del = document.getElementById('subcounty-delete');
     var frm = document.getElementById('frm');
     del.addEventListener("click",function (e) {
         frm.submit();
     })
     
-  </script>
-
-  <script>
-    $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-    })
   </script>
 @endpush
