@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('financial_years', function (Blueprint $table) {
+        Schema::create('facilityLevels', function (Blueprint $table) {
             $table->id();
-            $table->string('financial_year');
-            $table->string('year');
+            $table->string('level');
             $table->string('status');
-            $table->string('start_date');
-            $table->string('end_date');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('financial_years');
+        Schema::dropIfExists('facilityLevels');
     }
 };

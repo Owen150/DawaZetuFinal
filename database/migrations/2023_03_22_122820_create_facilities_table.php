@@ -22,13 +22,11 @@ return new class extends Migration
             $table->string('contact_num');
             $table->string('sub_county');
             $table->string('ward');
-            $table->unsignedBigInteger('location_id');
             $table->string('lat');
             $table->string('lng');
             $table->string('icon_path')->nullable();
             $table->string('code')->nullable();
 
-            $table->foreign('location_id')->references('id')->on('locations');
             $table->timestamps();
         });
     }

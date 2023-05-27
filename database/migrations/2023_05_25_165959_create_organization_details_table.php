@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('financial_years', function (Blueprint $table) {
+        Schema::create('organization_details', function (Blueprint $table) {
             $table->id();
-            $table->string('financial_year');
-            $table->string('year');
-            $table->string('status');
-            $table->string('start_date');
-            $table->string('end_date');
-            $table->softDeletes();
+            $table->string('name');
+            $table->string('address');
+            $table->string('phone_number');
+            $table->string('email');
+            $table->string('coordinates');
+            $table->string('domain');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('financial_years');
+        Schema::dropIfExists('organization_details');
     }
 };
